@@ -3,24 +3,24 @@
     <h3>予定の編集</h3>
   </nav>
   <div class = table_all>
-    <%= form_with model: @user do |user| %>
+    <%= form_with model: @user do |f| %>
       <table class = table_record>
-        <th><%= user.label :title,"タイトル" %></th>
-        <td><%= user.text_field :title %></td>
+        <th><%= f.label :title,"タイトル" %></th>
+        <td><%= f.text_field :title %></td>
       </table>
       <table class = table_record>
-        <th><%= user.label :start,"開始日" %></th>
-        <td><%= user.text_field :start %></td>
-        <th><%= user.label :end,"終了日" %></th>
-        <td><%= user.text_field :end %></td>
+        <th><%= f.label :start,"開始日" %></th>
+        <td><%= f.text_field :start %></td>
+        <th><%= f.label :end,"終了日" %></th>
+        <td><%= f.text_field :end %></td>
       </table>
       <table class = table_record>
         <tr>
-        <th><%= user.label :memo,"スケジュールメモ" %></th>
-        <td><%= user.text_area:memo %></td>
+        <th><%= f.label :memo,"スケジュールメモ" %></th>
+        <td><%= f.text_area:memo %></td>
       </tr>
       </table>
-      <p><%= user.submit "更新"%></p>
+      <p><%= f.submit "更新" %></p>
       <p><%= link_to "キャンセル", :users %></p>
     <% end %>
   </div>
