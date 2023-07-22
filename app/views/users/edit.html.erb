@@ -1,0 +1,27 @@
+<section class = new_record>
+  <nav>
+    <h3>予定の新規追加</h3>
+  </nav>
+  <div class = table_all>
+    <%= form_with model: @user do |f| %>
+      <table class = table_record>
+        <th><%= f.label :title,"タイトル" %></th>
+        <td><%= f.text_field :title %></td>
+      </table>
+      <table class = table_record>
+        <th><%= f.label :start,"開始日" %></th>
+        <td><%= f.text_field :start %></td>
+        <th><%= f.label :end,"終了日" %></th>
+        <td><%= f.text_field :end %></td>
+      </table>
+      <table class = table_record>
+        <tr>
+        <th><%= f.label :memo,"スケジュールメモ" %></th>
+        <td><%= f.text_area:memo %></td>
+      </tr>
+      </table>
+      <p><%= f.submit "更新"%></p>
+      <p><%= link_to "キャンセル", :users %></p>
+    <% end %>
+  </div>
+</section>

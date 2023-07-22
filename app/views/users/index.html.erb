@@ -1,0 +1,32 @@
+<section class = main_contents>
+  <div class = home_header>
+    <p>予定一覧</p>
+    <%= link_to "新規追加", :users_new %>
+  </div>
+  <table class = table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>更新日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+        <td><%= user.id %></td>
+        <td><%= user.title %></td>
+        <td><%= user.start %></td>
+        <td><%= user.end %></td>
+        <td><%= user.created_at%></td>
+        <td><%= link_to "詳細", user %></td>
+        <td><%= link_to "編集", [:edit,user] %></td>
+        <% end %>
+    </tbody>
+</section>
+
+
+

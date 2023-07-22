@@ -1,0 +1,16 @@
+<p><%= link_to "予定一覧に戻る", :users %></p>
+<h3><%= @user.id%></h3>
+<table>
+  <tr>
+  <th>開始日</th>
+  <td><%= @user.start %></td>
+  </tr>
+  <tr>
+  <th>終了日</th>
+  <td><%= @user.end %></td>
+  </tr>
+  <tr>
+  <th>スケジュールメモ</th>
+  <td><%= @user.memo %></td>
+  </tr>
+</table>
