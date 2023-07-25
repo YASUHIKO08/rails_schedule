@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController  
   def index
     @users = User.all #ユーザー全体の情報を取得
   end
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:title,:start,:end,:memo))
+    @user = User.new(params.require(:user).permit(:title,:start,:end,:memo,:all_day))
     if @user.save
       redirect_to :users
     else
@@ -26,8 +26,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
-    if @user.update.(params.require(:user).permit(:title,:start,:end,:memo))
+    if @user.update(params.require(:user).permit(:title,:start,:end,:memo,:all_day))
       redirect_to :users
     else
       render "edit"
@@ -35,6 +34,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    binding.pry 
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to :users
   end
 
 end

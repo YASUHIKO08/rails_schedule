@@ -2,6 +2,7 @@
   <nav>
     <h3>予定の新規追加</h3>
   </nav>
+  <%= render "shared/error", obj: @user %>
   <div class = table_all>
     <%= form_with model: @user do |user| %>
       <table class = table_record>
@@ -9,19 +10,21 @@
         <td><%= user.text_field :title %></td>
       </table>
       <table class = table_record>
-        <th><%= user.label :start,"開始日" %></th>
+        <th><%= user.label :start,"開始日(20xx-mm-ddで記載してください)" %></th>
         <td><%= user.text_field :start %></td>
-        <th><%= user.label :end,"終了日" %></th>
+        <th><%= user.label :end,"終了日(20xx-mm-ddで記載してください)" %></th>
         <td><%= user.text_field :end %></td>
       </table>
       <table class = table_record>
         <tr>
+        <p><%= user.label :all_day,"終日" %></p>
+        <p><%= user.check_box :all_day, checked: true, unchecked_value: false %></p>
         <th><%= user.label :memo,"スケジュールメモ" %></th>
         <td><%= user.text_area:memo %></td>
-      </tr>
-      </table>
+        </tr>
+      </table> 
       <p><%= user.submit "登録"%></p>
       <p><%= link_to "キャンセル", :users %></p>
-    <% end %>
   </div>
+  <% end %>
 </section>

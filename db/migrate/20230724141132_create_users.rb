@@ -1,11 +1,10 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-      t.string :name
       t.string :title
-      t.string :start
-      t.string :end
-      t.string :memo
+      t.date :start
+      t.date :end
+      t.boolean :all_day
 
       t.timestamps
     end

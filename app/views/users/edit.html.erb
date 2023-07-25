@@ -16,6 +16,8 @@
       </table>
       <table class = table_record>
         <tr>
+        <p><%= f.label :all_day,"終日" %></p>
+        <p><%= f.check_box :all_day, checked: true, unchecked_value: false %></p>
         <th><%= f.label :memo,"スケジュールメモ" %></th>
         <td><%= f.text_area:memo %></td>
       </tr>

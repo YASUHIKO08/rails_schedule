@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_22_050321) do
+ActiveRecord::Schema.define(version: 2023_07_24_141918) do
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "title"
-    t.string "start"
-    t.string "end"
-    t.string "memo"
+    t.date "start"
+    t.date "end"
+    t.boolean "all_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "memo"
   end
 
 end
